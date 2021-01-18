@@ -1,0 +1,30 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'java'
+}
+
+javafx {
+    version = "15.0.1"
+    modules = [ 'javafx.controls', 'javafx.base', 'javafx.fxml', 'javafx.web' ]
+}
+
+application {
+    mainClassName = 'io.github.PheonixVX.TerraLauncher.Main'
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.8.5'
+}
+
+shadowJar {
+    archiveBaseName.set('shadow')
+    archiveClassifier.set('')
+    archiveVersion.set('')
+}

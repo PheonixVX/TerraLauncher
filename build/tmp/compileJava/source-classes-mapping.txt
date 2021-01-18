@@ -1,0 +1,12 @@
+io/github/PheonixVX/TerraLauncher/version/AbstractVersionDownload.java
+ io.github.PheonixVX.TerraLauncher.version.AbstractVersionDownload
+io/github/PheonixVX/TerraLauncher/authentication/AuthenticationManager.java
+ io.github.PheonixVX.TerraLauncher.authentication.AuthenticationManager
+io/github/PheonixVX/TerraLauncher/Controller.java
+ io.github.PheonixVX.TerraLauncher.Controller
+io/github/PheonixVX/TerraLauncher/Main.java
+ io.github.PheonixVX.TerraLauncher.Main
+io/github/PheonixVX/TerraLauncher/version/UltimateDownload.java
+ io.github.PheonixVX.TerraLauncher.version.UltimateDownload
+io/github/PheonixVX/TerraLauncher/TerraLauncher.java
+ io.github.PheonixVX.TerraLauncher.TerraLauncher
