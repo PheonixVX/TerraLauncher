@@ -46,7 +46,7 @@ public class UltimateDownload implements AbstractVersionDownload {
 	@Override
 	public void downloadClient () {
 		try (InputStream in = clientUrl.openStream()) {
-			File file = new File( System.getProperty("user.dir") + "/bin/minecraft.jar");
+			File file = new File(  "./bin/minecraft.jar");
 			if (!file.exists()) {
 				file.mkdirs();
 				file.createNewFile();
@@ -62,7 +62,7 @@ public class UltimateDownload implements AbstractVersionDownload {
 		for (int i = 0; i < libraries.length; i++) {
 			try (InputStream in = libraries[i].openStream()) {
 				String url = Paths.get(libraries[i].getPath()).getFileName().toString();
-				File file = new File( System.getProperty("user.dir") + "/libs/" + url);
+				File file = new File(  "./libs/" + url);
 				if (!file.exists()) {
 					file.mkdirs();
 					file.createNewFile();
@@ -79,13 +79,13 @@ public class UltimateDownload implements AbstractVersionDownload {
 		for (int i = 0; i < natives.length; i++) {
 			try (InputStream in = natives[i].openStream()) {
 				String url = Paths.get(natives[i].getPath()).getFileName().toString();
-				File file = new File( System.getProperty("user.dir") + "/natives/" + url);
+				File file = new File("./natives/" + url);
 				if (!file.exists()) {
 					file.mkdirs();
 					file.createNewFile();
 					Files.copy(in, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
 					if (file.canRead()) {
-						unzip(file, new File(System.getProperty("user.dir") + "/natives/"));
+						unzip(file, new File("./natives/"));
 					}
 				}
 			} catch (IOException e) {
@@ -111,7 +111,6 @@ public class UltimateDownload implements AbstractVersionDownload {
 		String username = stream.readLine();
 		String sessionToken = stream.readLine().replace("\"", "");
 		ProcessBuilder pb = new ProcessBuilder("java", "-Djava.library.path=natives/", "-cp", "\"" + sb.toString() + "\"", "net.minecraft.client.Minecraft", username, sessionToken);
-		System.out.println(pb.command());
 		File file = new File("logs/");
 		file.mkdirs();
 		file = new File("logs/output.txt");
